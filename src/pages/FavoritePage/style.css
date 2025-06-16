@@ -11,6 +11,14 @@
   margin-top: 94px;
 }
 
+.favorite-page__no-favorites {
+  color: #888888;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 100px; 
+  font-weight: 500;
+}
+
 @media (max-width: 767px) {
   .favorite-page__line {
     display: none;

@@ -33,6 +33,10 @@ const FavoritePage = () => {
       });
   }, []);
 
+  const noFavoritesMessage = (
+    <p className="favorite-page__no-favorites">Вы еще не добавили избранные</p>
+  );
+
   return (
     <div className="favorite-page">
       <Header />
@@ -42,7 +46,13 @@ const FavoritePage = () => {
       {loading && <Loader />}
       {error && <p className="favorite-page__error">{error}</p>}
 
-      {!loading && !error && <Gallery gallerys={favoritesPhotos} />}
+      {!loading &&
+        !error &&
+        (favoritesPhotos.length > 0 ? (
+          <Gallery gallerys={favoritesPhotos} />
+        ) : (
+          noFavoritesMessage
+        ))}
     </div>
   );
 };
